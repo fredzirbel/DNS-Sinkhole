@@ -1,7 +1,7 @@
 <h1>DNS Sinkhole + Unbound</h1>
 
 <h2>Description</h2>
-Pi-hole is a network-wide ad blocker that acts as a DNS sinkhole, intercepting and blocking advertisements and trackers at the network level. By effectively filtering out unwanted content and reducing network traffic, it enhances user privacy and security while improving overall network performance. The term "sinkhole" points to the system's role in "sinking" or redirecting unwanted DNS queries to prevent them from reaching their intended destinations. Unbound is a validating, recursive DNS resolver that enhances privacy and security by securely handling and caching DNS queries.
+Pi-hole is a powerful network-wide ad blocker that functions as a DNS sinkhole, intercepting and blocking advertisements and trackers before they reach any devices on your network. By filtering out unwanted content at the source, Pi-hole not only enhances user privacy and security but also improves overall network performance by reducing unnecessary traffic. The term "sinkhole" refers to its ability to "sink" or redirect unwanted DNS queries, effectively preventing them from reaching their intended destinations. Unbound complements Pi-hole by serving as a validating, recursive DNS resolver. It securely handles and caches DNS queries, further enhancing privacy and ensuring efficient and secure domain resolution.
 <br />
 
 <h2>Technology Used</h2>
