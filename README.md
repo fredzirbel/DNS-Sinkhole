@@ -29,7 +29,7 @@ After a successful installation, we set a static IP to the Pi... <br/>
 In order for the ad-blocking to be applied network-wide, we must set the primary DNS server to the Pi's IP address...  <br/>
 <img src="https://i.imgur.com/jmb1D9S.jpeg" height="100%" width="100%"/>
 <br /><br />
-After applying the changes and restarting the router, we are able to pull up the dashboard - displaying all kinds of information!  <br/>
+After applying the changes and restarting the router, we are able to pull up the dashboard - displaying all kinds of information...  <br/>
 <img src="https://i.imgur.com/RoV906B.jpeg" height="100%" width="100%"/>
 <br /><br />
 Now, to install Unbound, use the following command...  <br/>
@@ -38,7 +38,7 @@ Now, to install Unbound, use the following command...  <br/>
 Create a configuration file with this command...<br/>
 <img src="https://i.imgur.com/pIo0xMc.jpeg" height="100%" width="100%"/>
 <br /><br />
-Copy and paste this blob of code which can be found <a href="https://docs.pi-hole.net/guides/dns/unbound/">here</a>, then save and exit the new file...
+Copy and paste this block of code which can be found <a href="https://docs.pi-hole.net/guides/dns/unbound/">here</a>, then save and exit the file...
 <img src="https://i.imgur.com/YsdDXlp.jpeg" height="100%" width="100%"/>
 <br /><br />
 Restart Unbound with the following command...
