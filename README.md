@@ -8,7 +8,7 @@ Pi-hole is a powerful network-wide ad blocker that functions as a DNS sinkhole, 
 
 - <b>Raspberry Pi</b> 
 - <b>Ubuntu/Linux</b>
-- <b>Network/Router Configuration</b>
+- <b>Network/Router Configuration/DHCP</b>
 
 <h2>Environments Used </h2>
 
