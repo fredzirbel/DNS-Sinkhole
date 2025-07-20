@@ -1,59 +1,75 @@
-<h1>DNS Sinkhole + Unbound</h1>
+# DNS Sinkhole + Unbound
 
-<h2>Description</h2>
-Pi-hole is a powerful network-wide ad blocker that functions as a DNS sinkhole, intercepting and blocking advertisements and trackers before they reach any devices on your network. By filtering out unwanted content at the source, Pi-hole not only enhances user privacy and security but also improves overall network performance by reducing unnecessary traffic. The term "sinkhole" refers to its ability to "sink" or redirect unwanted DNS queries, effectively preventing them from reaching their intended destinations. Unbound complements Pi-hole by serving as a validating, recursive DNS resolver. It securely handles and caches DNS queries, further enhancing privacy and ensuring efficient and secure domain resolution.
-<br />
+## Description  
+[Pi-hole](https://pi-hole.net/) acts as a network-wide DNS sinkhole that blocks ads and trackers by intercepting unwanted DNS queries before they reach your devices. This improves privacy, security, and network performance by reducing unnecessary traffic.  
 
-<h2>Technology Used</h2>
+[Unbound](https://docs.pi-hole.net/guides/dns/unbound/) complements Pi-hole as a validating, recursive DNS resolver, securely handling and caching DNS queries to further enhance privacy and ensure efficient domain resolution.
 
-- <b>Raspberry Pi</b> 
-- <b>Ubuntu/Linux</b>
-- <b>Network/Router Configuration/DHCP</b>
+## Technology Used
 
-<h2>Environments Used </h2>
+- **Raspberry Pi** (hardware platform)  
+- **Raspberry Pi OS / Ubuntu Linux** (operating system)  
+- **Network and Router Configuration** (DHCP, static IP, DNS forwarding)  
+- **Pi-hole** (DNS sinkhole and ad blocker)  
+- **Unbound** (validating recursive DNS resolver)
 
-- <b>Raspberry Pi OS</b>
+---
 
 <h2>Setup Walkthrough</h2>
 
+**Step 1:** Prepare your Raspberry Pi by flashing the Raspberry Pi OS image.  
 <p align="center">
-First step: image the Raspberry Pi... <br/>
-<img src="https://i.imgur.com/TdsZU6R.jpeg" height="100%" width="100%"/>
-<br /><br />
-Once the Pi is ready to go, install Pi-hole with the following command...  <br/>
-<img src="https://i.imgur.com/sssrPRm.jpeg" height="100%" width="100%"/>
-<br /><br />
-After a successful installation, we set a static IP to the Pi... <br/>
-<img src="https://i.imgur.com/MqnnUBv.jpeg" height="100%" width="100%"/>
-<br /><br />
-In order for the ad-blocking to be applied network-wide, we must set the primary DNS server to the Pi's IP address...  <br/>
-<img src="https://i.imgur.com/jmb1D9S.jpeg" height="100%" width="100%"/>
-<br /><br />
-After applying the changes and restarting the router, we are able to pull up the dashboard - displaying all kinds of information...  <br/>
-<img src="https://i.imgur.com/RoV906B.jpeg" height="100%" width="100%"/>
-<br /><br />
-Now, to install Unbound, use the following command...  <br/>
-<img src="https://i.imgur.com/t29d7rF.jpeg" height="100%" width="100%"/>
-<br /><br />
-Create a configuration file with this command...<br/>
-<img src="https://i.imgur.com/pIo0xMc.jpeg" height="100%" width="100%"/>
-<br /><br />
-Copy and paste this block of code which can be found <a href="https://docs.pi-hole.net/guides/dns/unbound/">here</a>, then save and exit the file...
-<img src="https://i.imgur.com/YsdDXlp.jpeg" height="100%" width="100%"/>
-<br /><br />
-Restart Unbound with the following command...
-<img src="https://i.imgur.com/kv04Qwh.jpeg" height="100%" width="100%"/>
-<br /><br />
-Back in our Pi-hole settings, we want to clear any existing upstream DNS servers and add a new custom one (127.0.0.1#5335 = localhost + port number). We are finished setting up Unbound!
-<img src="https://i.imgur.com/DEJArsd.jpeg" height="100%" width="100%"/>
+  <img src="https://i.imgur.com/TdsZU6R.jpeg" alt="Raspberry Pi imaging" width="500" />
 </p>
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+**Step 2:** Install Pi-hole using the official install script.  
+<p align="center">
+  <img src="https://i.imgur.com/sssrPRm.jpeg" alt="Install Pi-hole command" width="500" />
+</p>
+
+**Step 3:** Assign a static IP address to your Raspberry Pi for consistent network access.  
+<p align="center">
+  <img src="https://i.imgur.com/MqnnUBv.jpeg" alt="Set static IP" width="500" />
+</p>
+
+**Step 4:** Configure your router’s DHCP settings to use your Pi’s IP as the primary DNS server, enabling network-wide ad blocking.  
+<p align="center">
+  <img src="https://i.imgur.com/jmb1D9S.jpeg" alt="Router DNS settings" width="500" />
+</p>
+
+**Step 5:** Access the Pi-hole dashboard to monitor blocked queries and network stats.  
+<p align="center">
+  <img src="https://i.imgur.com/RoV906B.jpeg" alt="Pi-hole dashboard" width="500" />
+</p>
+
+---
+
+### Integrating Unbound
+
+**Step 6:** Install Unbound to act as a validating recursive DNS resolver.  
+<p align="center">
+  <img src="https://i.imgur.com/t29d7rF.jpeg" alt="Install Unbound command" width="500" />
+</p>
+
+**Step 7:** Create and edit the Unbound configuration file.  
+<p align="center">
+  <img src="https://i.imgur.com/pIo0xMc.jpeg" alt="Create Unbound config file" width="500" />
+</p>
+
+**Step 8:** Copy the recommended configuration block (source: [Pi-hole Unbound Guide](https://docs.pi-hole.net/guides/dns/unbound/)) into the file and save.  
+<p align="center">
+  <img src="https://i.imgur.com/YsdDXlp.jpeg" alt="Unbound config snippet" width="500" />
+</p>
+
+**Step 9:** Restart the Unbound service to apply changes.  
+<p align="center">
+  <img src="https://i.imgur.com/kv04Qwh.jpeg" alt="Restart Unbound" width="500" />
+</p>
+
+**Step 10:** In Pi-hole settings, clear any upstream DNS servers and add a custom one pointing to `127.0.0.1#5335` (localhost with Unbound's port). This completes your secure DNS setup!  
+<p align="center">
+  <img src="https://i.imgur.com/DEJArsd.jpeg" alt="Pi-hole upstream DNS settings" width="500" />
+</p>
+
+---
+
